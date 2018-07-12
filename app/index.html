@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>GPX Analyst</title>
+	<meta name="author" content="Viktor, Sulaxan, Tobias">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Dancing+Script|Kaushan+Script|Open+Sans|Petit+Formal+Script|Pinyon+Script|Roboto|Rouge+Script" rel="stylesheet">
+	<!-- Import Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="lib/css/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body id="body">
+    <!-- particles.js container -->
+    <div id="particles-js"></div> <!-- stats - count particles -->
+  	<div class="container">
+      <h1>
+        GPX Viewer & Analyst
+        <img src = "https://cdn4.iconfinder.com/data/icons/ios7-active-strategy/512/route_sign_road_direction-512.png" alt="logo" height="70px" width="70px" align="right">
+      </h1>
+      <br>
+    <button type ="button" class="btn btn-info" onclick="hide_show()" id="io_button"> File Selection </button>
+    <div class="row">
+      <div id="hidableContainer">
+        <div class="col-md-6">
+            <!-- add track panel -->
+          <div class="panel panel-default io" id="trackInput">
+            <div class="panel-heading">
+              <a class="text-muted"  data-target="#ajaxForm">
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                Add a Track
+              </a>
+            </div>
+              <div id="trackfile" class="panel-body panel-collapse collapse in" id="ajaxForm">
+                <p><i>Select a file:</i></p>
+                <div class="input-group">
+                  <input type="file" id="files" name="files[]"/>
+                  <output id="list"></output>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+  		<div class="col-md-12">
+        <!-- Leaflet map integration -->
+  			<div id="map"></div>
+  		</div>
+  	</div>
+  	<br>
+    <div id = "hidableStats">
+  		<div class="row">
+  			<div class="col-md-12">
+  				<div class="panel-group">
+  					<div class="panel panel-info">
+  						<table id="tableDBTrack" class="table table-hover">
+  							<thead>
+  								<tr>
+  									<td><b>#</b></td>
+  									<td><b>Name</b></td>
+  									<td><b>Distance</b></td>
+  									<td><b>Duration</b></td>
+  									<td><b>Pace</b></td>
+                    <td><b>∑ Positive Elevation</b></td>
+                    <td><b>∑ Negative Elevation</b></td>
+                    <td><b>∑ Elevation</b></td>
+					<td><b>Max. Speed</b></td>
+  								</tr>
+  							</thead>
+  							<tbody id="tableDBTrackContents"></tbody>
+  						</table>
+  					</div>
+            <canvas id="myChart" maxwidth="700px" maxheight="350px"></canvas>
+  				</div>
+  			</div>
+  		</div>
+    </div>
+	</div>
+
+  <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<!-- Library imports -->
+	<script type="text/javascript" src="lib/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/js/leaflet.js"></script>
+	<script type="text/javascript" src="lib/js/gpx.js"></script>
+  <script type="text/javascript" src="lib/js/Chart.js"></script>
+	<!-- Script imports -->
+  <script type="text/javascript" src="js/particles.js" defer=true></script>
+	<script type="text/javascript" src="js/mapInit.js" defer=true></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+  </body>
+</html>
