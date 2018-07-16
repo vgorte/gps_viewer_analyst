@@ -169,7 +169,7 @@ function distVincenty(lat1, lat2, lon1, lon2) {
 }
 
 // distance calculation for a sphere
-function distanceOnGeoid(lat1, lat2, lon1, lon2){
+function distanceOnSphere(lat1, lat2, lon1, lon2){
 	lat1 = lat1 * Math.PI / 180.0;
 	lat2 = lat2 * Math.PI / 180.0;
 	lon1 = lon1 * Math.PI / 180.0;
